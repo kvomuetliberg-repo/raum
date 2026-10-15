@@ -10,11 +10,11 @@ raum 2 and raum can both be installed; they use separate engines and separate sn
 
 ## Install
 
-1. Copy the `raum2` folder into `dust/code/` on norns.
+1. Copy the `raum` folder into `dust/code/` on norns.
    - **SMB:** connect to `smb://norns.local/dust` (user `we`, password `sleep`).
-   - **Terminal:** `scp -r raum2 we@norns.local:~/dust/code/`
+   - **Terminal:** `scp -r raum we@norns.local:~/dust/code/`
 2. Restart norns, or type `;restart` in maiden, so the new engine compiles.
-3. Plug in grid and arc, then open **SELECT > raum2**.
+3. Plug in grid and arc, then open **SELECT > raum**.
 
 raum 2 starts silent, on the Hall preset, processing whatever comes into the inputs.
 
@@ -84,7 +84,7 @@ While raum runs it turns the system *monitor* level and the system *reverb* off.
 **Snapshots (columns 13–16, rows 1–4)**
 - Press a slot to recall it with morph. ALT + slot saves the current sound to it.
 - Bright means current, medium means stored, dim means empty.
-- Snapshots are kept in `dust/data/raum2/snapshots.data`.
+- Snapshots are kept in `dust/data/raum/snapshots.data`.
 
 **Arc pages (row 5)** choose which four parameters the arc controls. ALT + any key in this row opens page 5, DYNAMICS.
 
@@ -187,8 +187,8 @@ These are the test sounds from the earlier reverb patch, plus a chord stab and a
 
 ## Files
 
-- `raum2.lua`: the script.
-- `lib/Engine_Raum2.sc`: the SuperCollider engine. It is an 8-line feedback delay network with a Hadamard matrix, a separate decay for lows and highs, early reflections, input diffusion, bloom, shimmer, freeze, ducking and gate, plus the nb capture.
+- `raum.lua`: the script.
+- `lib/Engine_Raum2.sc`: the SuperCollider engine (it keeps the name Raum2, so it can't clash with the engine of the older raum on the same norns). It is an 8-line feedback delay network with a Hadamard matrix, a separate decay for lows and highs, early reflections, input diffusion, bloom, shimmer, freeze, ducking and gate, plus the nb capture.
 - `lib/nb/`: the nb library by sixolet (github.com/sixolet/nb), included unchanged.
 
 ## Tested before shipping, not yet on hardware
@@ -237,5 +237,5 @@ These are the test sounds from the earlier reverb patch, plus a chord stab and a
 
 ## Files and license
 
-- `lib/nb`: a copy of the nb library by sixolet (https://github.com/sixolet/nb), included so raum2 runs without extra installs; it keeps its own author's terms.
-- `LICENSE`: GPL-3.0 for raum2's own files.
+- `lib/nb`: a copy of the nb library by sixolet (https://github.com/sixolet/nb), included so raum runs without extra installs; it keeps its own author's terms.
+- `LICENSE`: GPL-3.0 for raum's own files.
